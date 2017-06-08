@@ -51,6 +51,8 @@ def get_bad_days():
 
 
 def plain_text_out(question, data, parameter):
+    """Take question string, list of tuples and parameter string
+    print question & each list member on separate lines"""
     print("\n\n" + question + "\n")
     for line in data:
         print(str(line[0]) + " - " + str(line[1]) + parameter)
