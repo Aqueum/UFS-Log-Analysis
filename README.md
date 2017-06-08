@@ -4,6 +4,18 @@
 https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004) 
 - Martin Currie (Aqueum) - 8 June 2017
 
+# Purpose & design
+Python code to run PostgreSQL commands to determine:
+1. most popular web articles and
+2. authors, and 
+3. highlight days with significant errors
+
+based on website logs.
+
+I decided to avoid the need to create views & set up one function to run each
+of the above tasks, then a single function to format & print the output to 
+console as a plain text report. 
+
 # Getting Started
 1. Ensure that you have functional copies of [Python 3](
 https://www.python.org/downloads/), [PostgreSQL](
