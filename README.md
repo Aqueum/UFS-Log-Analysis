@@ -6,22 +6,23 @@ https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004)
 
 # Getting Started
 1. Ensure that you have functional copies of [Python 3](
-https://www.python.org/downloads/) and [PostgreSQL](
-https://www.postgresql.org/download/)
+https://www.python.org/downloads/), [PostgreSQL](
+https://www.postgresql.org/download/) and [Psycopg2](
+http://initd.org/psycopg/download/)
 installed
 2. [Download this repo](
 https://github.com/Aqueum/UFS-Log-Analysis/archive/master.zip) 
 to your own computer & unzip
-3. [Download newsdata.sql from udacity](
+3. [Download newsdata.sql](
 https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
-and save it in the folder created in step 2
+from udacity and save it in the folder created in step 2
 4. Open a unix command line (Terminal in macOS) navigate to the folder created
 in step 2
 5. Enter `psql -d news -f newsdata.sql` to load the database
-5. Enter `python3 LogsAnalysis.py` to start a Log Analysis
+6. Enter `python3 LogsAnalysis.py` to start a Log Analysis
 
 # Known issues
-## date format
+## Date format
 The date format deliberately doesn't match the example, I'm not American &
 prefer the ISO standard that PostgreSQL defaults to.
 
