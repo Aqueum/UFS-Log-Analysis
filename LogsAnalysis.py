@@ -8,6 +8,8 @@ def get_pop_articles():
     of 3 most popular articles by hits descending"""
     db = psycopg2.connect("dbname=news")
     c = db.cursor()
+    # like pattern matching concept from https://stackoverflow.com
+    # /questions/13274679/like-with-on-column-names
     c.execute("select articles.title, count(*) as num from articles, log "
               "where log.path like '%' || articles.slug "
               "group by articles.title "
@@ -39,6 +41,15 @@ def get_bad_days():
     of dates when over 1% of requests gave errors"""
     db = psycopg2.connect("dbname=news")
     c = db.cursor()
+    # date extraction from timestamp concept from: https://stackoverflow.com
+    # /questions/6133107/extract-date-yyyy-mm-dd-from-a-timestamp-in-postgresql
+    # ratio calculation concept from: https://stackoverflow.com
+    # /questions/31237856/calculating-ratios-with-sql
+    # derived table concept from: https://stackoverflow.com
+    # /questions/32187583
+    # /postgres-how-to-implement-calculated-column-with-clause
+    # percent formatting from: https://stackoverflow.com
+    # /questions/1183929/how-to-do-percent-total-in-sql
     c.execute("with percentages as "
               "(select log.time::timestamp::date as date, round( 100.0 * "
               "avg(case when status='404 NOT FOUND' then 1 else 0 end), 1) "
